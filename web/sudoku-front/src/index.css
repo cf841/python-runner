@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+.container {
+    @apply flex flex-col items-center justify-center min-h-screen p-4;
+  }
+  
+  .header {
+    @apply text-3xl mb-4;
+  }
+  
+  .button {
+    @apply bg-blue-500 text-white px-4 py-2 rounded mb-2;
+  }
+  
+  .button-active {
+    @apply bg-blue-700;
+  }
+  
+  .button-container {
+    @apply flex flex-col mr-4;
+  }
+
+  /* styles.css */
+.cell {
+    @apply w-20 h-20 flex items-center justify-center border border-gray-300 relative;
+  }
+  
+.cell-selected {
+  @apply bg-yellow-200;
+}
+
+.shape {
+  z-index: 2; /* Shape */
+  position: relative; /* Ensure z-index works */
+}
+
+.values {
+  @apply text-xl font-bold;
+  z-index: 3;
+  position: relative;
+}
+
+.pencil-marks-container {
+  @apply absolute flex justify-center items-center text-xs;
+}
+
+.pencil-marks-grid {
+  @apply grid grid-cols-4 grid-rows-2 place-items-center;
+}
+
+.pencil-mark {
+  @apply flex items-center justify-center;
+  z-index: 3;
+  position: relative;
+}
+
+  /* Additional styles for thicker borders around 3x3 boxes */
+.border-right {
+  @apply border-r-4;
+}
+
+.border-bottom {
+  @apply border-b-4;
+}
+
+.odd-condition {
+  background-color: red;
+}

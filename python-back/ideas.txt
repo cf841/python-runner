@@ -1,0 +1,20 @@
+Difficult+Interestingness of a puzzle:
+
+Number of cells added to make 'simple' (solve with only constraint-satisfation with NO backtracking)
+Amount of backtracking needed (0 is standard, 1 tricky, 2 very hard) <- Need improvement on this metric
+Amount of unique techniques used to solve (ie how many steps of human logic to make reductions total in the puzzle)
+
+
+Rules that can be added:
+
+Odd/Even cells
+Two cells must be/must not be consecutive
+Palindrome lines, thermal bulb (Linked list, only need to store head and maybe for convenience tail, maybe last/first unfound node)
+killer cage -> annoying for CSP, collection of cells with a total. 
+
+Puzzle:
+    => Grid
+        => Cells
+    => Restriction type + locations
+
+CSP/Checker must check for all normal grid rules then all restrictions. Seperating should make it easier to implement
