@@ -334,7 +334,7 @@ def basic_puzzle(grid):
     grid.set_pos(8, 2, 6)
     grid.set_pos(8, 4, 8)
 
-palindrome_puzzle(s)
+puzzle_1(s)
 valid = s.setup()
 print(s)
 solver = Solver.Solver()

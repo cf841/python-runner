@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from Sudoku import Sudoku, Cell
+from Sudoku import Sudoku
 import Solver
 import Conditions
 import time
@@ -42,7 +42,8 @@ def solve_sudoku():
                 sudoku.add_condition(Conditions.Thermo(cell_array))
             elif condition['type'] == 'killer':
                 sudoku.add_condition(Conditions.Killer_Sum(cell_array, condition['sum']))
-            # Add more condition types as needed
+            
+
     # for r in range(9):
     #     for c in range(9):
     #         if sudoku.grid[r][c].val != 0:
@@ -55,12 +56,13 @@ def solve_sudoku():
     grid_return = [[0 for _ in range(9)] for _ in range(9)]
     for r in range(9):
         for c in range(9):
-            grid_return[r][c] = output.grid[r][c].val # If go back to deepcopy, make this output
+            grid_return[r][c] = output.grid[r][c].val 
             
     for r in range(9):
         for c in range(9):
             if not sudoku.grid[r][c].possible and sudoku.grid[r][c].val == 0: 
                 print(f"Cell at row {r}, column {c} has no possibilities")
+
     end_time = time.time()
     duration = end_time - start_time
     print(f"Solve Sudoku duration: {duration:.4f} seconds")
